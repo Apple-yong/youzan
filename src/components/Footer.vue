@@ -1,28 +1,14 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li class="active">
-        <a href="https://maijia.youzan.com/mars/homepage">
-          <i class="icon-home"></i>
-          <div>有赞</div>
-        </a>
-      </li>
-      <li>
-        <a href="https://maijia.youzan.com/mars/category">
-          <i class="icon-category"></i>
-          <div>分类</div>
-        </a>
-      </li>
-      <li>
-        <a href="https://h5.youzan.com/v2/trade/cart?f_platform=yzapp&amp;source=yzapp">
-          <i class="icon-cart"></i>
-          <div>购物车</div>
-        </a>
-      </li>
-      <li>
-        <a href="https://h5.youzan.com/v2/buyer/member">
-          <i class="icon-user"></i>
-          <div>我</div>
+      <li :class="{active:index===curIndex}" 
+      v-for="(list,index) in navConfig"
+      :key="list.index"
+      @click="changeNav(list,index)"
+      >
+        <a>
+          <i :class="list.icon"></i>
+          <div>{{ list.name }}</div>
         </a>
       </li>
     </ul>
@@ -30,6 +16,44 @@
 </template>
 
 <script>
+import qs from 'qs'
+let {index} = qs.parse(location.search.substr(1))
+//主要是取到index的值，qs.parse('?index=1&name=tony') 这个是插件 要去掉这个问号‘？’
+//{ index } = xxx 对象的解构赋值,如果不加{}，index就是个对象
+
+console.log(index)
+
+let navConfig = [{
+  name: '有赞',
+  icon: 'icon-home',
+  href: 'index.html'
+},{
+  name: '分类',
+  icon: 'icon-category',
+  href: 'category.html'
+},{
+  name: '购物车',
+  icon: 'icon-cart',
+  href: 'cart.html'
+},{
+  name: '我',
+  icon: 'icon-user',
+  href: 'member.html'
+}]
+
+export default {
+  data() {
+    return {
+      navConfig,
+      curIndex: parseInt(index) || 0
+    }
+  },
+  methods: {
+    changeNav(list,index){
+      location.href = `${list.href}?index=${index}`
+    }
+  }
+}
 </script>
 
 <style>
