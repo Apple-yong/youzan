@@ -51,6 +51,7 @@
   only screen and (min-device-pixel-ratio: 1.5) {
   .bottom-nav {
     border-top-width: 1px;
+    z-index: 999;
   }
 }
 
