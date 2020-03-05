@@ -4,8 +4,8 @@ import './category.css'
 import Vue from 'vue'
 import axios from 'axios'
 import url from 'js/api.js'
-
-import Foot from 'components/Footer.vue'
+import mixin from 'js/mixin.js'
+// import Foot from 'components/Footer.vue'
 
 new Vue({
   el: '#app',
@@ -43,22 +43,26 @@ new Vue({
       .then(res => {
         this.rankData = res.data.data
       })
+    },
+    toSearch(list){
+      location.href = `search.html?keyword=${list.name}&id=${list.id}`
     }
   },
-  components: {
-    Foot
-  },
-  filters: {
-    numFilter (value) {
-      let realVal = ''
-      if (!isNaN(value) && value!== '') {
-        // 截取当前数据到小数点后两位
-        realVal = parseFloat(value).toFixed(2)
-      } else {
-        realVal = '--'
-      }
-      return realVal
-    }
-  }
+  mixins: [mixin]
+  // components: {
+  //   Foot
+  // },
+  // filters: {
+  //   numFilter (value) {
+  //     let realVal = ''
+  //     if (!isNaN(value) && value!== '') {
+  //       // 截取当前数据到小数点后两位
+  //       realVal = parseFloat(value).toFixed(2)
+  //     } else {
+  //       realVal = '--'
+  //     }
+  //     return realVal
+  //   }
+  // }
 })
 
