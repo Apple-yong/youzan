@@ -32,7 +32,6 @@ new Vue({
     move() {
       this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
       if(this.scroll > 100) {
-        console.log(1)
         this.isShow = true
       }else {
         this.isShow = false

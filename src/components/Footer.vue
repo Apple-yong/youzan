@@ -21,7 +21,6 @@ let {index} = qs.parse(location.search.substr(1))
 //主要是取到index的值，qs.parse('?index=1&name=tony') 这个是插件 要去掉这个问号‘？’
 //{ index } = xxx 对象的解构赋值,如果不加{}，index就是个对象
 
-console.log(index)
 
 let navConfig = [{
   name: '有赞',
