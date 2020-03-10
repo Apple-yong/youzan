@@ -2583,10 +2583,10 @@ only screen and (min-device-pixel-ratio: 1.5) {
 .list-finished span,
 .loading-more span {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 50%;
   width: 16px;
   height: 16px;
-  background: url("/v2/image/loader.gif") no-repeat center center;
+  background: url(https://b.yzcdn.cn/v2/image/loader.gif) no-repeat center center;
   background-size: 16px 16px
 }
 
@@ -2595,7 +2595,7 @@ only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
   .list-finished span,
   .loading-more span {
-    background-image: url("/v2/image/loader@2x.gif")
+    background-image: url(https://b.yzcdn.cn/v2/image/loader@2x.gif)
   }
 }
 
