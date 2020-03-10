@@ -11,6 +11,7 @@ import axios from 'axios'
 import url from 'js/api.js'
 import mixin from 'js/mixin.js'
 import qs from 'qs'
+import swipe from 'components/swipe.vue'
 
 // 获取url的id值
 let {id} = qs.parse(location.search.substr(1))
@@ -22,13 +23,21 @@ new Vue({
         details: null,
         detailTab,
         tabIndex: 0,
-        dealLists: null
+        dealLists: null,
+        bannerLists: null
     },
     methods: {
         getDetails(){
             axios.get(url.details, {id})
             .then(res => {
                 this.details = res.data.data
+                this.bannerLists = []
+                this.details.imgs.forEach(element => {
+                  this.bannerLists.push({
+                    clickUrl: '',
+                    img: element
+                  })
+                });
             })
         },
         changeTab(index){
@@ -46,6 +55,9 @@ new Vue({
     },
     created(){
         this.getDetails()
+    },
+    components: {
+      swipe
     },
     mixins: [mixin]
 })
