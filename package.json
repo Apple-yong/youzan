@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "mint-ui": "^2.2.13",
+    "mock.js": "^0.2.0",
     "qs": "^6.9.1",
     "swiper": "^5.3.6",
     "velocity-animate": "^1.5.2",
