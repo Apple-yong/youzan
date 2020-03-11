@@ -21,6 +21,7 @@ let detailTab = ['商品详情', '本店成交']
 new Vue({
     el: '#app',
     data: {
+        id,
         details: null,
         detailTab,
         tabIndex: 0,
@@ -28,7 +29,9 @@ new Vue({
         bannerLists: null,
         skuType: 1,
         showSku: false,
-        skuNum: 1
+        skuNum: 1,
+        isAddCart: false,
+        showAddMessage: false
     },
     methods: {
         getDetails(){
@@ -64,6 +67,22 @@ new Vue({
             if(this.skuNum === 1 && num<0) return
             this.skuNum = this.skuNum + num
         },
+        addCart() {
+            axios.post(url.addCart, {
+                id,
+                number: this.skuNum
+            })
+            .then(res => {
+                if(res.data.status === 200){
+                    this.showSku = false
+                    this.isAddCart = true
+                    this.showAddMessage = true
+                }
+                setTimeout(() => {
+                    this.showAddMessage = false
+                }, 1000);
+            })
+        }
     },
     created(){
         this.getDetails()
