@@ -11,7 +11,8 @@ import mixin from 'js/mixin.js'
 new Vue({
     el:'.container',
     data: {
-        lists: null
+        lists: null,
+        totalPrice: 0
     },
     created(){
         this.getList()
@@ -35,6 +36,23 @@ new Vue({
                     });
                 });
             }
+        },
+        selectLists() {
+            if(this.lists && this.lists.length){
+                let arr = []
+                let totalPrice = 0
+                this.lists.forEach(shop => {
+                    shop.goodsList.forEach(good => {
+                        if(good.checked){
+                            arr.push(good)
+                            totalPrice += good.price * good.number
+                        }
+                    })
+                })
+                this.totalPrice = totalPrice
+                return arr
+            }
+            return []
         }
     },
     methods: {
