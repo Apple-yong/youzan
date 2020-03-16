@@ -3,6 +3,7 @@ import './cart_base.css'
 import './cart_trade.css'
 
 import Vue from 'vue'
+import $ from 'jquery'
 import axios from 'axios'
 import url from 'js/api.js'
 import mixin from 'js/mixin.js'
@@ -174,6 +175,7 @@ new Vue({
             this.removeMsg = `确定要将所选 ${this.removeLists.length} 个商品删除？`
         },
         removeConfirm(){
+            let totalPrice = 0
             if( this.removeMsg === "确定要删除该商品吗？" ){
                 let {shop,shopIndex,good,goodIndex} = this.removeData
                 axios.post(url.cartRemove,{
@@ -213,6 +215,10 @@ new Vue({
                     }
                     this.removePopup  = false
                 })
+                // 没有商品了，合计价格归零
+                if(this.lists.length === 1){
+                    this.totalPrice = 0
+                }
             }
             
         },
