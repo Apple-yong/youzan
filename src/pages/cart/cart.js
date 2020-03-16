@@ -3,7 +3,6 @@ import './cart_base.css'
 import './cart_trade.css'
 
 import Vue from 'vue'
-import $ from 'jquery'
 import axios from 'axios'
 import url from 'js/api.js'
 import mixin from 'js/mixin.js'
@@ -13,13 +12,12 @@ new Vue({
     el:'.container',
     data: {
         lists: null,
-        totalPrice: 0,
+        totalPrice: 0,  // 总价
         editingShop: null,
         editingShopIndex: -1,
-        // 是否进行删除
-        removePopup: false,
+        removePopup: false,  // 是否进行删除
         removeData: null,
-        removeMsg: null
+        removeMsg: null   // <删除>弹窗里的文字
     },
     created(){
         this.getList()
