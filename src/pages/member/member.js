@@ -1,24 +1,22 @@
-import './member.css'
-import './member_base.css'
-
+// 1、使用vue-router
 import Vue from 'vue'
-import axios from 'axios'
-import url from 'js/api.js'
-import mixin from 'js/mixin.js'
+import VueRouter from 'vue-router'
+import member from './components/member.vue'
+Vue.use(VueRouter)
+
+let routes = [{
+  path: '/',
+  component: require('./components/member.vue')
+}]
+
+// 2、创建vue-router实例
+let router = new VueRouter({
+  routes
+})
+
 
 new Vue({
-  el: '.container',
-  data: {
-
-  },
-  created(){
-
-  },
-  methods: {
-
-  },
-  computed: {
-
-  },
-  mixins: [mixin]
+  el: '#app',
+  router,
+  render: h => h(member),
 })
