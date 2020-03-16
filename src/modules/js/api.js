@@ -7,7 +7,7 @@ let url = {
   searchList: '/search/list',
   details: '/goods/details',
   deal: '/goods/deal',
-  cartAdd: '/cart/add',
+  addCart: '/cart/add',
   cartLists: '/cart/list',
   cartUpdate: '/cart/update',
   cartReduce: '/cart/reduce',
