@@ -21,10 +21,12 @@ let routes = [
       },
       { 
         path: 'allAddress',
+        name: 'allAddress',
         component: allAddress,
       },
       { 
         path: 'form',
+        name: 'form',
         component: form
       }
     ]

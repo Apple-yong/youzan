@@ -1347,3 +1347,7 @@ body {
   background: url("/v2/image/pf/logo/wenzhou.png") no-repeat center 20px;
   background-size: 120px
 }
+
+select {
+  color: black; 
+}
