@@ -28,16 +28,22 @@
 </style>
 
 <script>
-  import axios from 'axios'
-  import url from 'js/api.js'
   export default {
-    data(){
-      return {
-        lists: null
+    // data(){
+    //   return {
+    //     lists: null
+    //   }
+    // },
+    computed: {
+      lists(){
+        return this.$store.state.lists
       }
     },
     created(){
-      this.getLists()
+      // this.getLists()
+      if(!this.lists){
+        this.$store.dispatch('getLists')
+      }
     },
     methods: {
       toEdit(list){
@@ -46,15 +52,15 @@
           instance: list
         }})
       },
-      getLists(){
-        axios.get(url.addressLists)
-        .then(res => {
-          this.lists = res.data.lists
-        })
-        .catch(err => {
-          console.error(err); 
-        })
-      }
+      // getLists(){
+      //   axios.get(url.addressLists)
+      //   .then(res => {
+      //     this.lists = res.data.lists
+      //   })
+      //   .catch(err => {
+      //     console.error(err); 
+      //   })
+      // }
     }
   }
 </script>
