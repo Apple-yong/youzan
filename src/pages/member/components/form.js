@@ -1,5 +1,3 @@
-import axios from 'axios'
-import url from 'js/api.js'
 export default {
     data() {
       return {
