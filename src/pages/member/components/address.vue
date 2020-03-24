@@ -6,6 +6,6 @@
 
 <style scoped>
   @import 'https://meyerweb.com/eric/tools/css/reset/reset200802.css';
-  @import './address_base.css';
-  @import './address.css';
+  @import './css/address_base.css';
+  @import './css/address.css';
 </style>

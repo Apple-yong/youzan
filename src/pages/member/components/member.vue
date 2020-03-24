@@ -88,8 +88,8 @@
 
 <style scoped>
     @import 'https://meyerweb.com/eric/tools/css/reset/reset200802.css';
-    @import './member.css';
-    @import './member_base.css';
+    @import './css/member.css';
+    @import './css/member_base.css';
 </style>
     
 <script>
