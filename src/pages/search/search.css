@@ -41,7 +41,7 @@
   float: left;
   width: 60px;
   height: 60px;
-  background-image: url("/v2/image/wap/weixin_share_default_logo.png");
+  background-image: url("https://b.yzcdn.cn/v2/image/wap/weixin_share_default_logo.png");
   background-size: 80% 80%;
   background-repeat: no-repeat;
   background-position: 50%
@@ -105,7 +105,7 @@
   height: 120px;
   background-color: #f9f9f9;
   border-radius: 0 0 8px 8px;
-  background: #f9f9f9 url("/v2/image/wap/opentip.png") 100% 4px no-repeat;
+  background: #f9f9f9 url("https://b.yzcdn.cn/v2/image/wap/opentip.png") 100% 4px no-repeat;
   background-size: 127px auto
 }
 
@@ -133,8 +133,8 @@
   bottom: 0;
   background-color: #fff;
   z-index: 999;
-  -o-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  -o-border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-top: 2px solid #e5e5e5
 }
 
@@ -354,8 +354,8 @@ img {
   padding: 6px 15px;
   background-color: #fafafa;
   z-index: 1001;
-  -o-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  -o-border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-bottom: 2px solid #e5e5e5
 }
 
@@ -527,8 +527,8 @@ only screen and (min-device-pixel-ratio:1.5) {
 }
 
 .search-content .suggest {
-  -o-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
-  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  -o-border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
+  border-image: url("https://b.yzcdn.cnhttps://b.yzcdn.cn/v2/image/wap/border-line-2.png") 2 stretch;
   border-bottom: 2px solid #e5e5e5
 }
 
@@ -769,8 +769,8 @@ only screen and (min-device-pixel-ratio:1.5) {
   margin-left: 115px;
   box-sizing: border-box;
   padding: 10px 15px 0 0;
-  -o-border-image: url("/v2/image/wap/border-line.png") 2 stretch;
-  border-image: url("/v2/image/wap/border-line.png") 2 stretch;
+  -o-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line.png") 2 stretch;
+  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line.png") 2 stretch;
   border-bottom: 2px solid #fe6573
 }
 
@@ -802,8 +802,8 @@ only screen and (min-device-pixel-ratio:1.5) {
   padding-top: 10px;
   margin-top: 20px;
   background-color: #fff;
-  -o-border-image: url("/v2/image/wap/border-line.png") 2 stretch;
-  border-image: url("/v2/image/wap/border-line.png") 2 stretch;
+  -o-border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line.png") 2 stretch;
+  border-image: url("https://b.yzcdn.cn/v2/image/wap/border-line.png") 2 stretch;
   border-top: 2px solid #fe6573;
   border-bottom: 2px solid #fe6573
 }
