@@ -86,10 +86,10 @@
     </div>
 </template>
 
-<style scoped>
-    @import 'https://meyerweb.com/eric/tools/css/reset/reset200802.css';
-    @import './css/member.css';
+<style>
     @import './css/member_base.css';
+    @import './css/member.css';
+    
 </style>
     
 <script>

@@ -21,8 +21,7 @@
   </div>
 </template>
 
-<style scoped>
-  @import 'https://meyerweb.com/eric/tools/css/reset/reset200802.css';
+<style>
   @import './css/address_base.css';
   @import './css/address.css';
 </style>
