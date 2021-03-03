@@ -1,7 +1,10 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li :class="{active:curHref===list.href}" 
+      <li :class="{active:(curHref === list.href && curIndex === list.index) ? true : 
+      ((curIndex === list.index && curHref === '') ? true : 
+      (curHref === list.href && curIndex === 0) ? true : false
+      )}" 
       v-for="(list,index) in navConfig"
       :key="list.index"
       @click="changeNav(list,index)"
@@ -24,19 +27,23 @@ let {index} = qs.parse(location.search.substr(1))
 let navConfig = [{
   name: '有赞',
   icon: 'icon-home',
-  href: 'index.html'
+  href: 'index.html',
+  index: 0
 },{
   name: '分类',
   icon: 'icon-category',
-  href: 'category.html'
+  href: 'category.html',
+  index: 1
 },{
   name: '购物车',
   icon: 'icon-cart',
-  href: 'cart.html'
+  href: 'cart.html',
+  index: 2
 },{
   name: '我',
   icon: 'icon-user',
-  href: 'member.html'
+  href: 'member.html',
+  index: 3
 }]
 
 export default {
@@ -50,6 +57,7 @@ export default {
   methods: {
     changeNav(list,index){
       location.href = `${list.href}?index=${index}`
+      console.log(curHref)
     }
   }
 }
