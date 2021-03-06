@@ -1,10 +1,7 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li :class="{active:(curHref.indexOf(list.href) >=0  && curIndex === list.index) ? true : 
-      ((curHref.indexOf(list.href) >=0 && curHref === '') ? true : 
-      (curHref.indexOf(list.href) >=0 && curIndex === 0) ? true : false
-      )}" 
+      <li :class="{active:(curHref.indexOf(list.href) >=0) ? true : (curIndex === index && index === 0 && (curHref.indexOf('cart.html') ==-1)? true : false)}" 
       v-for="(list,index) in navConfig"
       :key="list.index"
       @click="changeNav(list,index)"
