@@ -1,9 +1,9 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li :class="{active:(curHref === list.href && curIndex === list.index) ? true : 
-      ((curIndex === list.index && curHref === '') ? true : 
-      (curHref === list.href && curIndex === 0) ? true : false
+      <li :class="{active:(curHref.indexOf(list.href) >=0  && curIndex === list.index) ? true : 
+      ((curHref.indexOf(list.href) >=0 && curHref === '') ? true : 
+      (curHref.indexOf(list.href) >=0 && curIndex === 0) ? true : false
       )}" 
       v-for="(list,index) in navConfig"
       :key="list.index"
@@ -23,7 +23,7 @@ import qs from 'qs'
 let {index} = qs.parse(location.search.substr(1))
 //主要是取到index的值，qs.parse('?index=1&name=tony') 这个是插件 要去掉这个问号‘？’
 //{ index } = xxx 对象的解构赋值,如果不加{}，index就是个对象
-
+console.log(index)
 let navConfig = [{
   name: '有赞',
   icon: 'icon-home',
@@ -51,13 +51,12 @@ export default {
     return {
       navConfig,
       curIndex: parseInt(index) || 0,
-      curHref: location.pathname.substr(1)
+      curHref: location.pathname
     }
   },
   methods: {
     changeNav(list,index){
       location.href = `${list.href}?index=${index}`
-      console.log(curHref)
     }
   }
 }
